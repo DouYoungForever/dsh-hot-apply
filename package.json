@@ -20,7 +20,14 @@
     "web-server",
     "cordis"
   ],
-  "homepage": "https://www.npmjs.com/package/dsh-hot-apply",
+  "homepage": "https://github.com/DouYoungForever/dsh-hot-apply#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DouYoungForever/dsh-hot-apply.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DouYoungForever/dsh-hot-apply/issues"
+  },
   "exports": {
     ".": "./index.js",
     "./client": "./client.js",
