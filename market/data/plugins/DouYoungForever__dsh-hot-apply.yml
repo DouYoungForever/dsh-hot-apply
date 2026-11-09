@@ -1,0 +1,7 @@
+url: https://github.com/DouYoungForever/dsh-hot-apply
+name: DouYoungForever/dsh-hot-apply
+category: dev
+icon: https://raw.githubusercontent.com/DouYoungForever/dsh-hot-apply/main/icon-512.png
+description:
+  en: 'Applies plugin file changes to the running DSH composition without restarting the app, and restarts the Windows desktop app on demand when a change really needs one. The host half watches the profile plugin directories, runs the HMR reconcile pass and serves a local HTTP API; the web half adds a restart pill, a settings page and a button on the plugin detail page. A restart hands a helper script to explorer.exe so the helper survives the app exit, waits for the old process to disappear, starts the new one and brings its window to the front. When the host is not the Windows desktop app, capability detection reports a specific reason instead of failing silently.'
+  zh: '把插件文件改动应用到正在运行的 DSH 组合，不必重启应用；确实需要重启时，一键重启 Windows 桌面端。宿主半区监视 profile 的插件目录、执行 HMR 对账流程并提供本地 HTTP 接口；网页半区提供右下角重启胶囊、设置页与插件详情页按钮。重启时把助手脚本交给 explorer.exe 拉起，助手在应用退出后仍然存活，等旧进程消失再启动新进程并把窗口置前。宿主不是 Windows 桌面端时，能力检测返回具体原因，而不是静默失败。'
