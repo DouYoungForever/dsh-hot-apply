@@ -1,0 +1,83 @@
+{
+  "name": "dsh-hot-apply",
+  "version": "0.3.0",
+  "description": "Apply plugin file changes to the running DSH composition without restarting the app, plus a one-click restart for changes that really need one.",
+  "license": "MIT",
+  "author": "dsh-hot-apply contributors",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "hot-reload",
+    "hot-apply",
+    "restart",
+    "reload",
+    "developer-tools",
+    "web-server",
+    "cordis"
+  ],
+  "homepage": "https://www.npmjs.com/package/dsh-hot-apply",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "scripts/unpatch-shell.mjs",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "icon": "icon.svg",
+  "bin": {
+    "dsh-hot-apply-unpatch": "scripts/unpatch-shell.mjs"
+  },
+  "scripts": {
+    "unpatch-shell": "node scripts/unpatch-shell.mjs",
+    "pack": "npm pack --dry-run"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [],
+      "external": ["react"]
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.1-rc.4": "compatible",
+        "0.2.2-alpha.2": "compatible",
+        "0.2.2-rc.1": "compatible"
+      }
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-host-webserver": "^0.2.0-rc.1",
+    "@deepseek-ai/dsh-hmr": "^0.2.0-rc.1",
+    "@deepseek-ai/dsh-plugin-manager": "^0.2.0-rc.1",
+    "react": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-host-webserver": { "optional": true },
+    "@deepseek-ai/dsh-hmr": { "optional": true },
+    "@deepseek-ai/dsh-plugin-manager": { "optional": true }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
